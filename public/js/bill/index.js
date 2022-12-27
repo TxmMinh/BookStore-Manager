@@ -1,105 +1,42 @@
 import { renderReceipt } from "./receipt.js";
 
-function getRow({ id, name, author, publisher, price, quantity }) {
-    const $tag = document.createElement("tr");
-
-    const $id = document.createElement("th");
-    $id.scope = "row";
-    $id.innerText = id;
-    const $name = document.createElement("td");
-    $name.innerText = name;
-    const $author = document.createElement("td");
-    $author.innerText = author;
-    const $publisher = document.createElement("td");
-    $publisher.innerText = publisher;
-    const $price = document.createElement("td");
-    $price.innerText = `${price}`;
-    const $quantity = document.createElement("td");
-    $quantity.innerText = `${quantity}`;
-
-    $tag.appendChild($id);
-    $tag.appendChild($name);
-    $tag.appendChild($author);
-    $tag.appendChild($publisher);
-    $tag.appendChild($price);
-    $tag.appendChild($quantity);
-
-    const $inputWrapper = document.createElement("td");
-    $tag.appendChild($inputWrapper);
-
-    const $input = document.createElement("input");
-    $input.type = "number";
-    if (quantity === 0) $input.disabled = true;
-    $inputWrapper.appendChild($input);
-
-    return { $tag, $input, id, quantity };
-}
-
-const $bookList = document.getElementById("book-list");
-const bookList = [
-    {
-        id: "1",
-        name: "Doraemon",
-        author: "Fujiko Fujio",
-        publisher: "Tuổi trẻ",
-        price: 35000,
-        quantity: 100,
-    },
-    {
-        id: "2",
-        name: "Conan",
-        author: "Aoyama Gōshō",
-        publisher: "Bình Minh",
-        price: 70000,
-        quantity: 2,
-    },
-    {
-        id: "3",
-        name: "Chiếc lược ngà",
-        author: "Nguyễn Quang Sáng",
-        publisher: "unknown",
-        price: 45000,
-        quantity: 0,
-    },
-    {
-        id: "4",
-        name: "Nhà giả kim",
-        author: "Paulo Coelho",
-        publisher: "unknown",
-        price: 65000,
-        quantity: 10,
-    },
-    {
-        id: "5",
-        name: "Sherlock Holmes",
-        author: "Arthur Conan Doyle",
-        publisher: "Văn Học",
-        price: 100000,
-        quantity: 20,
-    },
-];
-const inputList = [];
-// bookList.forEach((item) => {
-//     const tmp = getRow(item);
-//     $bookList.appendChild(tmp.$tag);
-//     inputList.push({ tag: tmp.$input, ...item, num: tmp.quantity });
-// });
-
 const $btnBuyBooks = document.getElementById("btn-buy-books");
 $btnBuyBooks.addEventListener("click", () => {
     const buyList = [];
-    for (let i = 0; i < inputList.length; i++) {
-        const x = inputList[i];
-        if (x.tag.value === "" || x.tag.value === "0") continue;
-        const num = parseInt(x.tag.value);
-        if (num < 0 || num > x.quantity) {
+    const $bookList = document.getElementById(`book-list`);
+    for (let i = 1; i < $bookList.childNodes.length; i += 2) {
+        const x = $bookList.childNodes[i];
+        const keys = [
+            "id",
+            "name",
+            "author",
+            "nxb",
+            "publisher",
+            "price",
+            "quantity",
+            "num",
+        ];
+        let idx = 0;
+        const data = {};
+
+        for (let j = 1; j < x.childNodes.length; j += 2) {
+            if (x.childNodes[j].id === "buy-quantity") {
+                data[keys[idx++]] = x.childNodes[j].childNodes[0].value;
+                continue;
+            }
+            data[keys[idx++]] = x.childNodes[j].innerText;
+        }
+
+        if (data.num === "" || data.num === "0") continue;
+        console.log(data);
+        const num = parseInt(data.num);
+        if (num < 0 || num > data.quantity) {
             swal("Lỗi!", "Số lượng không hợp lệ", "error");
             return;
         }
         buyList.push({
-            ...x,
-            num: num,
-            money: num * x.price,
+            ...data,
+            money: num * data.price,
         });
     }
 

@@ -7,10 +7,6 @@
     <title>SE104.N11.KHTN</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="This project serves free and beautiful portfolio template for everyone. Anyone can showcase their work including moocs, education, projects, experience,etc. to the world."
-    />
 
     <!--Import Google Icon Font-->
     <link
@@ -22,14 +18,14 @@
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="assets/css/preloader.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/lltlien/SE104/main/assets/css/preloader.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/lltlien/SE104/main/assets/css/home.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/lltlien/SE104/main/assets/css/style.css" />
     <!-- Favicon -->
     <link
       id="favicon"
       rel="shortcut icon"
-      href="assets/images/favicon.png"
+      href="https://raw.githubusercontent.com/lltlien/SE104/main/assets/images/favicon.png"
       type="image/x-png"
     />
     <!-- Font awesome icons -->
@@ -83,7 +79,7 @@
         <div class="center">
           <div>
             <img
-              src="assets/images/bookstore.png"
+              src="https://raw.githubusercontent.com/lltlien/SE104/main/assets/images/bookstore.png"
               alt=""
               class="rounded"
               height="200"
@@ -111,7 +107,7 @@
     ></script>
 
     <!--JavaScript at end of body for optimized loading-->
-    <script src="assets/js/app.js"></script>
+    <script src="https://raw.githubusercontent.com/lltlien/SE104/main/assets/js/app.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -122,8 +118,8 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="assets/js/particle.js"></script>
+    <script type="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script type="javascript" src="https://raw.githubusercontent.com/lltlien/SE104/main/assets/js/particle.js"></script>
   </body>
 </html>
 @endsection

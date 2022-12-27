@@ -36,8 +36,16 @@
               <tbody id="customer-list">
                 <!-- php code get customer-list -->
                 @foreach ($clients as $key => $client)
-                <tr>
-                    <td scope="row">{{ $client->id }}</td>
+                <tr onclick = "
+                  document.getElementById(`customer-id`).innerText = this.childNodes[1].innerText;
+                  document.getElementById(`customer-name`).innerText = this.childNodes[3].innerText;
+                  document.getElementById(`customer-phone`).innerText = this.childNodes[5].innerText;
+                  document.getElementById(`customer-email`).innerText = this.childNodes[7].innerText;
+                  document.getElementById(`customer-total-debt`).innerText = this.childNodes[9].innerText;
+                  document.getElementById(`choose-customer-close-modal`).click();
+
+                " style="cursor: pointer;" id = {{ $client->id }} >
+                    <th scope="row">{{ $client->id }}</th>
                     <td>{{ $client->name }}</td>
                     <td>{{ $client->phone_number }}</td>
                     <td>{{ $client->email }}</td>
@@ -94,17 +102,16 @@
                   </tr>
                 </thead>
                 <tbody id="book-list">
-                  <!-- php code get book-list -->
                   @foreach ($books as $key => $book)
                   <tr>
-                      <td scope="row">{{ $book->id }}</td>
+                      <th scope="row">{{ $book->id }}</th>
                       <td>{{ $book->name }}</td>
                       <td>{{ $book->author_id }}</td>
                       <td>{{ $book->category_id }}</td>
                       <td>{{ $book->publishing_house }}</td>
                       <td>{{ $book->gia_ban }}</td>
                       <td>{{ $book->number }}</td>
-                      <td><input type="number" /></td>
+                      <td id="buy-quantity"><input type="number" /></td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -114,7 +121,7 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close-add-book-modal">
                 Đóng
               </button>
-              <button type="button" class="btn btn-primary" id="btn-buy-books">Thêm</button>
+              <button type="button" class="btn btn-primary" id="btn-buy-books" >Thêm</button>
             </div>
           </div>
         </div>
@@ -148,7 +155,7 @@
         </div>
         <div class="d-flex justify-content-center">
 
-          <button class="btn btn-success" type="submit" id="btn-create-receipt">Tạo hoá đơn</button>
+          <button class="btn btn-success" type="submit" id="btn-create-receipt" >Tạo hoá đơn</button>
         </div>
       </div>
     </div>
@@ -162,7 +169,6 @@
 
     <script type="module" src="{{asset('/js/bill/index.js')}}"></script>
     <script type="module" src="{{asset('/js/bill/receipt.js')}}"></script>
-    {{-- <script type="module" src="{{asset('/js/bill/customer.js')}}"></script> --}}
 
 </div>
 
