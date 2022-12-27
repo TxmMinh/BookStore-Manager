@@ -71,9 +71,6 @@ $btnCreateReceipt.onclick = function () {
         return;
     }
 
-    console.log(curBuyList);
-    console.log(money);
-
     if (money > totalPrice) {
         swal(`Lỗi!`, `Số tiền thanh toán quá lớn! Mời nhập lại.`, `error`);
         return;
@@ -85,7 +82,8 @@ $btnCreateReceipt.onclick = function () {
         `success`
     );
 
-    setInterval(() => location.reload(), 1000);
+    console.log(buyList);
+    // setInterval(() => location.reload(), 1000);
 };
 
 export { renderReceipt };
