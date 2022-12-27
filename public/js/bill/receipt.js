@@ -74,16 +74,18 @@ $btnCreateReceipt.onclick = function () {
     console.log(curBuyList);
     console.log(money);
 
+    if (money > totalPrice) {
+        swal(`Lỗi!`, `Số tiền thanh toán quá lớn! Mời nhập lại.`, `error`);
+        return;
+    }
     swal(
         `Thanh toán thành công!`,
         `Số tiền: ${money} VNĐ` +
-            (money < totalPrice
-                ? `\nNợ: ${totalPrice - money} VNĐ`
-                : money > totalPrice
-                ? `\nDư: ${money - totalPrice}`
-                : ``),
+            (money < totalPrice ? `\nNợ: ${totalPrice - money} VNĐ` : ``),
         `success`
     );
+
+    setInterval(() => location.reload(), 1000);
 };
 
 export { renderReceipt };
