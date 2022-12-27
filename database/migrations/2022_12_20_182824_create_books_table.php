@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('author_id');
             $table->string('category_id');
             $table->string('publishing_house');
+            $table->integer('gia_ban');
             $table->integer('number');
+            $table->integer('so_luong_mua');
             $table->timestamps();
         });
     }

@@ -14,7 +14,9 @@ class Book extends Model
         'author_id',
         'category_id',
         'publishing_house',
+        'gia_ban',
         'number',
+        'so_luong_mua',
     ];
 
     public function authors()

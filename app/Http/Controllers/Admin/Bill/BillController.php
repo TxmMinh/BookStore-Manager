@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin\Bill;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\bill\BillService;
+use App\Http\Services\People\ClientService;
 use App\Models\bill\Bill;
+use App\Models\people\Client;
+use App\Models\book\Book;
+
 
 class BillController extends Controller
 {
@@ -20,6 +24,8 @@ class BillController extends Controller
     {
         return view('admin.bill.add', [
             'title' => 'Bán Sản Phẩm',
+            'clients' => Client::orderBy('id')->paginate(10),
+            'books' => Book::orderBy('id')->paginate(10),
         ]);
     }
 
