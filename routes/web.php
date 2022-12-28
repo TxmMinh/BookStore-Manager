@@ -3,8 +3,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\Book\BookController;
+use App\Http\Controllers\Admin\Book\AuthorController;
+use App\Http\Controllers\Admin\Book\CategoryController;
+use App\Http\Controllers\Admin\Book\Publishing_houseController;
 use App\Http\Controllers\Admin\Book\ImportBookController;
 use App\Http\Controllers\Admin\People\StaffController;
+use App\Http\Controllers\Admin\People\ClientController;
 use App\Http\Controllers\Admin\Bill\BuyController;
 use App\Http\Controllers\Admin\Bill\BillController;
 use App\Http\Controllers\Admin\Receipt\ReceiptController;
@@ -48,47 +52,65 @@ Route::middleware(['auth'])->group(function () {
 
         // Book
         Route::prefix('/book')->group(function () {
-            // add new book
-            Route::get('/new/add', [BookController::class, 'create']);
-            Route::post('/new/add', [BookController::class, 'store']);
-            Route::get('/new/list', [BookController::class, 'index']);
+            // add new author
+            Route::prefix('/author')->group(function () {
+                Route::get('/add', [AuthorController::class, 'create']);
+                Route::post('/add', [AuthorController::class, 'store']);
+                Route::get('/list', [AuthorController::class, 'index']);
+            });
 
-            // add import book
-            Route::get('/import/add', [ImportBookController::class, 'create']);
-            Route::post('/import/add', [ImportBookController::class, 'store']);
-            Route::get('/import/list', [ImportBookController::class, 'index']);
+            // add new category
+            Route::prefix('/category')->group(function () {
+                Route::get('/add', [CategoryController::class, 'create']);
+                Route::post('/add', [CategoryController::class, 'store']);
+                Route::get('/list', [CategoryController::class, 'index']);
+            });
+
+            // add new publishing house
+            Route::prefix('/publishing_house')->group(function () {
+                Route::get('/add', [Publishing_houseController::class, 'create']);
+                Route::post('/add', [Publishing_houseController::class, 'store']);
+                Route::get('/list', [Publishing_houseController::class, 'index']);
+            });
+
+            // add new book
+            Route::get('/add', [BookController::class, 'create']);
+            Route::post('/add', [BookController::class, 'store']);
+            Route::get('/list', [BookController::class, 'index']);
+
+        });
+
+        // Book Manage
+        Route::prefix('/import')->group(function () {
+            // Nhập Sách
+            Route::get('/add', [ImportBookController::class, 'create']);
+            Route::post('/add', [ImportBookController::class, 'store']);
+            // Tra cứu
+            Route::get('/list', [ImportBookController::class, 'index']);
         });
 
         // People
         Route::prefix('/people')->group(function () {
-            // add new book
+            // add new staff
             Route::get('/staff/add', [StaffController::class, 'create']);
             Route::post('/staff/add', [StaffController::class, 'store']);
             Route::get('/staff/list', [StaffController::class, 'index']);
 
-            // add import book
+            // add new client
             Route::get('/client/add', [ClientController::class, 'create']);
             Route::post('/client/add', [ClientController::class, 'store']);
             Route::get('/client/list', [ClientController::class, 'index']);
         });
 
-        Route::prefix('/buy')->group(function () {
-            // add new book
-            Route::get('/add', [BuyController::class, 'create']);
-            Route::post('/add', [BuyController::class, 'store']);
-            Route::get('/list', [BuyController::class, 'index']);
-
-        });
-
         Route::prefix('/bill')->group(function () {
-            // add new book
+            // add new bill
             Route::get('/add', [BillController::class, 'create']);
             Route::post('/add', [BillController::class, 'store']);
             Route::get('/list', [BillController::class, 'index']);
         });
 
         Route::prefix('/receipt')->group(function () {
-            // add new book
+            // add new receipt
             Route::get('/add', [ReceiptController::class, 'create']);
             Route::post('/add', [ReceiptController::class, 'store']);
             Route::get('/list', [ReceiptController::class, 'index']);

@@ -11,7 +11,6 @@
                     <th scope="col">Tác Giả</th>
                     <th scope="col">Thể Loại</th>
                     <th scope="col">Nhà Xuất Bản</th>
-                    <th scope="col">Số Lượng</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,9 +20,7 @@
                     <td>{{ $book->name }}</td>
                     <td>{{ $book->authors->name }}</td>
                     <td>{{ $book->categories->name }}</td>
-                    <td>{{ $book->publishing_house }}</td>
-                    <td>{{ $book->number }}</td>
-
+                    <td>{{ $book->publishing_houses->name }}</td>
                 </tr>
                 @endforeach
             </tbody>

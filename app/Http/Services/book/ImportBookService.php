@@ -4,7 +4,7 @@ namespace App\Http\Services\book;
 
 use App\Models\book\ImportBook;
 use App\Models\book\Book;
-use App\Models\book\Staff;
+use App\Models\people\Staff;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
@@ -19,9 +19,7 @@ class ImportBookService
     {
 
         try {
-            $request->except('_token');
             ImportBook::create($request->all());
-
             Session::flash('success', 'Nhập Sách Thành Công');
         } catch (\Exception $error) {
             Session::flash('error', $error->getMessage());

@@ -34,11 +34,6 @@
                 <input type="number" name="unit_import" class="form-control" >
             </div>
 
-            <div class="form-group">
-                <label>Ngày Nhập</label>
-                <input type="date" name="date" class="form-control">
-            </div>
-
         </div>
 
         <!-- /.card-body -->

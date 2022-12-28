@@ -76,10 +76,10 @@
                     </ul>
                 </li>
 
-                {{-- Sách --}}
+                {{-- Danh Mục Sách --}}
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-images"></i>
+                        <i class="nav-icon fas fa-regular fa-book"></i>
                         <p>
                             Danh Mục Sách
                             <i class="right fas fa-angle-left"></i>
@@ -87,27 +87,75 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/book/new/add" class="nav-link">
+                            <a href="/admin/book/author/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm Mới Sách</p>
+                                <p>Tác Giả</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/book/new/list" class="nav-link">
+                            <a href="/admin/book/author/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh Sách Sách</p>
+                                <p>Danh Sách Tác Giả</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/book/import/add" class="nav-link">
+                            <a href="/admin/book/category/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thể Loại</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/book/category/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Thể Loại</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/book/publishing_house/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Nhà Xuất Bản</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/book/publishing_house/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách NXB</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/book/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Đầu Sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/book/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Đầu Sách</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                {{-- Quản Lý Sách --}}
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-bookmark"></i>
+                        <p>
+                            Quản Lý Sách
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/import/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Nhập Sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/book/import/list" class="nav-link">
+                            <a href="/admin/import/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh Sách Nhập Sách</p>
+                                <p>Tra Cứu</p>
                             </a>
                         </li>
                     </ul>
@@ -123,18 +171,6 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/buy/add" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Bán Sản Phẩm</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/buy/list" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh Sách Bán</p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="/admin/bill/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -175,9 +211,10 @@
                     </ul>
                 </li>
 
+                {{-- Báo Cáo --}}
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas icofont-ui-note"></i>
+                        <i class="nav-icon fas fa-regular fa-file"></i>
                         <p>
                             Báo Cáo
                             <i class="right fas fa-angle-left"></i>
@@ -193,9 +230,54 @@
                         <li class="nav-item">
                             <a href="/admin/note/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Báo Cáo Tháng</p>
+                                <p>Báo Cáo Công Nợ</p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+
+                {{-- Quy Định --}}
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-pen"></i>
+                        <p>
+                            Quy Định
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/note/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm Quy Định</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/note/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Quy Định</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                {{-- Page Dashboard --}}
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-regular fa-paper-plane"></i>
+                        <p>
+                            Dashboard
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Trang Chủ</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 

@@ -24,8 +24,8 @@ class BillController extends Controller
     {
         return view('admin.bill.add', [
             'title' => 'Bán Sản Phẩm',
-            'clients' => Client::orderBy('id')->paginate(10),
-            'books' => Book::orderBy('id')->paginate(10),
+            'clients' => Client::orderBy('id')->get(),
+            'books' => Book::orderBy('id')->get(),
         ]);
     }
 

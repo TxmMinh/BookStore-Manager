@@ -13,18 +13,30 @@
             </div>
 
             <div class="form-group">
-                <label>Tên Nhà Xuất Bản</label>
-                <input type="text" name="publishing_house" class="form-control" placeholder="Nhập Tên Nhà Xuất Bản">
+                <label>Nhà Xuất Bản</label>
+                <select class="form-control" name="publishing_house_id">
+                    @foreach ($publishing_houses as $publishing_house)
+                        <option value="{{ $publishing_house->id }}">{{ $publishing_house->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
                 <label>Tác Giả</label>
-                <input type="text" name="author" class="form-control" id="menu" placeholder="Nhập Tên Tác Giả">
+                <select class="form-control" name="author_id">
+                    @foreach ($authors as $author)
+                        <option value="{{ $author->id }}">{{ $author->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
                 <label>Thể Loại</label>
-                <input type="text" name="category" class="form-control" placeholder="Nhập Tên Thể Loại">
+                <select class="form-control" name="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
         </div>

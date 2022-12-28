@@ -15,7 +15,6 @@ class ImportBook extends Model
         'staff_code',
         'extra_number',
         'unit_import',
-        'date',
     ];
 
     public function books()

@@ -9,14 +9,14 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $table = 'books';
+
     protected $fillable = [
         'name',
         'author_id',
         'category_id',
-        'publishing_house',
-        'gia_ban',
+        'publishing_house_id',
         'number',
-        'so_luong_mua',
     ];
 
     public function authors()
@@ -28,5 +28,11 @@ class Book extends Model
     {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
+
+    public function publishing_houses()
+    {
+        return $this->hasOne(Publishing_house::class, 'id', 'publishing_house_id');
+    }
+
 
 }

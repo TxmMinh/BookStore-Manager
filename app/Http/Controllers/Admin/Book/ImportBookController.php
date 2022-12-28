@@ -20,8 +20,8 @@ class ImportBookController extends Controller
 
     public function create()
     {
-        return view('admin.book.import', [
-            'title' => 'Thêm Sách Mới',
+        return view('admin.import_book.add', [
+            'title' => 'Nhập Sách',
             'books' => $this->importBookService->getBook(),
             'staffs' => DB::table('staffs')->get(),
         ]);
@@ -35,9 +35,8 @@ class ImportBookController extends Controller
 
     public function index()
     {
-        return view('admin.book.list_import_book', [
+        return view('admin.import_book.search', [
             'title' => 'Danh Sách Nhập Sách',
-            'title_form' => "Danh Sách Danh Mục",
             'import_books' => $this->importBookService->getAll(),
         ]);
     }

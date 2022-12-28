@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('import_books', function (Blueprint $table) {
             $table->id();
-            $table->integer('book_code');
-            $table->integer('staff_code');
-            $table->integer('extra_number');
-            $table->decimal('unit_import', $precision = 8, $scale = 2);
+            $table->integer('book_code'); // Mã Sách
+            $table->integer('staff_code'); // Mã Nhân Viên
+            $table->integer('extra_number'); // Số lượng nhập thêm
+            //$table->decimal('unit_import', $precision = 8, $scale = 2); // Đơn giá nhập
+            $table->integer('unit_import');
             $table->timestamps();
         });
     }

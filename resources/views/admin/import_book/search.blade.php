@@ -22,7 +22,7 @@
                     <td>{{ $import_book->staffs->name }}</td>
                     <td>{{ $import_book->extra_number }}</td>
                     <td>{{ $import_book->unit_import }}</td>
-                    <td>{{ $import_book->date }}</td>
+                    <td>{{ $import_book->created_at->format('d/m/Y') }}</td>
 
                 </tr>
                 @endforeach

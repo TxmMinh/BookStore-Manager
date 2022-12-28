@@ -5,6 +5,13 @@
 <div class="m-3">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <div>
+        <h3>Ngày Tạo Hóa Đơn</h3>
+        <input type="date" name="date">
+    </div>
+    <br />
+
     <div>
       <h3>Thông tin khách hàng
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#chooseCustomerModal">Chọn khách hàng</button>

@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->string('mahoadon');
-            $table->string('customer');
-            $table->date('data');
-            $table->integer('sum_money');
-            $table->integer('tien_tra');
-            $table->integer('tien_no');
+            $table->integer('customer_id');
+            $table->integer('staff_id');
+            $table->integer('sum_money'); // tổng tiền cần thanh toán
+            $table->integer('payment'); // tiền trả
+            $table->integer('debt'); // tiền nợ
             $table->timestamps();
         });
     }

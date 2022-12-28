@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Http\Services\people;
+namespace App\Http\Services\book;
 
-use App\Models\people\Client;
+use App\Models\book\Author;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
-class ClientService
+class AuthorService
 {
     public function store($request)
     {
+
         try {
             $request->except('_token');
-            Client::create($request->all());
-            Session::flash('success', 'Thêm Khách Hàng Thành Công');
+            Author::create($request->all());
+            Session::flash('success', 'Nhập Tác Giả Thành Công');
         } catch (\Exception $error) {
             Session::flash('error', $error->getMessage());
             return false;
@@ -21,7 +23,6 @@ class ClientService
 
     public function get()
     {
-        return Client::orderByDesc('id')->paginate(10);
+        return Author::orderBy('id')->paginate(10);
     }
-
 }

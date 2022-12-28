@@ -19,8 +19,11 @@ class BookController extends Controller
 
     public function create()
     {
-        return view('admin.book.new', [
-            'title' => 'Thêm Sách Mới',
+        return view('admin.book.book_add', [
+            'title' => 'Thêm Đầu Sách Mới',
+            'authors' => DB::table('authors')->get(),
+            'categories' => DB::table('categories')->get(),
+            'publishing_houses' => DB::table('publishing_houses')->get(),
         ]);
     }
 
@@ -32,12 +35,9 @@ class BookController extends Controller
 
     public function index()
     {
-        return view('admin.book.list', [
-            'title' => 'Danh Sách Sách',
-            'title_form' => 'Danh Sách Sách',
+        return view('admin.book.book_list', [
+            'title' => 'Danh Sách Đầu Sách',
             'books' => $this->bookService->get(),
         ]);
     }
-
-
 }
