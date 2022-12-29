@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('extra_number'); // Số lượng nhập thêm
             //$table->decimal('unit_import', $precision = 8, $scale = 2); // Đơn giá nhập
             $table->integer('unit_import');
+            $table->integer('price');
             $table->timestamps();
         });
     }

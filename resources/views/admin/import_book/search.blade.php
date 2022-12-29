@@ -11,6 +11,7 @@
                     <th scope="col">Tên Nhân Viên</th>
                     <th scope="col">Số Lượng Nhập</th>
                     <th scope="col">Đơn Giá Nhập</th>
+                    <th scope="col">Đơn Giá Bán</th>
                     <th scope="col">Ngày Nhập</th>
                 </tr>
             </thead>
@@ -22,6 +23,7 @@
                     <td>{{ $import_book->staffs->name }}</td>
                     <td>{{ $import_book->extra_number }}</td>
                     <td>{{ $import_book->unit_import }}</td>
+                    <td>{{ $import_book->price }}</td>
                     <td>{{ $import_book->created_at->format('d/m/Y') }}</td>
 
                 </tr>

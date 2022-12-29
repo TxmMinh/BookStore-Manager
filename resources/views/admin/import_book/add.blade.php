@@ -34,6 +34,11 @@
                 <input type="number" name="unit_import" class="form-control" >
             </div>
 
+            <div class="form-group">
+                <label>Đơn Giá Bán</label>
+                <input type="number" name="price" class="form-control" >
+            </div>
+
         </div>
 
         <!-- /.card-body -->
