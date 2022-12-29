@@ -33,6 +33,15 @@ function getRow(data, isTotal) {
         document
             .getElementsByName("book_quantity_list")[0]
             .setAttribute("value", data.sqlquantityList);
+
+        const $payment = document.getElementsByName("payment")[0];
+        if ($payment.value !== "") {
+            const money = parseInt($payment.value);
+
+            document
+                .getElementsByName("debt")[0]
+                .setAttribute("value", data.money - money);
+        }
     }
     return $tag;
 }
@@ -89,14 +98,14 @@ $btnCreateReceipt.onclick = function () {
         return;
     }
 
-    if (money > totalPrice) {
-        swal(`Lỗi!`, `Số tiền thanh toán quá lớn! Mời nhập lại.`, `error`);
-        return;
-    }
     swal(
         `Thanh toán thành công!`,
         `Số tiền: ${money} VNĐ` +
-            (money < totalPrice ? `\nNợ: ${totalPrice - money} VNĐ` : ``),
+            (money < totalPrice
+                ? `\nNợ: ${totalPrice - money} VNĐ`
+                : money > totalPrice
+                ? `\nDư: ${money - totalPrice}`
+                : ``),
         `success`
     );
 
