@@ -15,6 +15,7 @@ class Bill extends Model
         'sum_money',
         'payment',
         'debt',
+        'book_id_list',
     ];
 
 }

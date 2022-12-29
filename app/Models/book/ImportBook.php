@@ -2,6 +2,7 @@
 
 namespace App\Models\book;
 use App\Models\people\Staff;
+use App\Models\book\Book;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
