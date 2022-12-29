@@ -48,3 +48,43 @@ $btnBuyBooks.addEventListener("click", () => {
     document.getElementById("btn-close-add-book-modal").click();
     renderReceipt(buyList);
 });
+
+document
+    .getElementById("receipt-money-field")
+    .addEventListener("input", function () {
+        const money = parseInt(this.value);
+        document.getElementsByName("payment")[0].setAttribute("value", money);
+        const totalPrice = parseInt(
+            document.getElementsByName("sum_money")[0].value
+        );
+        document
+            .getElementsByName("debt")[0]
+            .setAttribute("value", totalPrice - money);
+    });
+
+document
+    .getElementById("action-post-receipt-data")
+    .addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        const cols = [
+            "customer_id",
+            "staff_id",
+            "sum_money",
+            "payment",
+            "debt",
+            "book_id_list",
+            "book_quantity_list",
+        ];
+
+        let cnt = 0;
+        for (let name of cols) {
+            if (document.getElementsByName(name)[0].value !== "") cnt++;
+        }
+
+        if (cnt === cols.length) this.submit();
+    });
+
+document.getElementById("choose-staff").addEventListener("change", function () {
+    console.log("selected");
+    document.getElementsByName("staff_id")[0].setAttribute("value", this.value);
+});

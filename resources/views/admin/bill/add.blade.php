@@ -7,7 +7,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <div>
         <h3>Nhân Viên</h3>
-        <select class="form-control" name="staff_id">
+        <select class="form-control" id="choose-staff">
             @foreach ($staffs as $staff)
                 <option value="{{ $staff->id }}">{{ $staff->name }}</option>
             @endforeach
@@ -53,6 +53,7 @@
                   document.getElementById(`customer-total-debt`).innerText = this.childNodes[9].innerText;
                   document.getElementById(`choose-customer-close-modal`).click();
 
+                  document.getElementsByName(`customer_id`)[0].setAttribute(`value`, this.childNodes[1].innerText);
                 " style="cursor: pointer;" id = {{ $client->id }} >
                     <th scope="row">{{ $client->id }}</th>
                     <td>{{ $client->name }}</td>
@@ -164,7 +165,19 @@
         </div>
         <div class="d-flex justify-content-center">
 
-          <button class="btn btn-success" type="submit" id="btn-create-receipt" >Tạo hoá đơn</button>
+          <form action="" method="post" id="action-post-receipt-data">
+            @csrf {{-- token --}}
+            <input type="hidden" name="customer_id" />
+            <input type="hidden" name="staff_id" value="1"/>
+            <input type="hidden" name="sum_money"  />
+            <input type="hidden" name="payment" >
+            <input type="hidden" name="debt" >
+            <input type="hidden" name="book_id_list" >
+            <input type="hidden" name="book_quantity_list" >
+
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+            <button class="btn btn-success" type="submit" id="btn-create-receipt" >Tạo hoá đơn</button>
+          </form>
         </div>
       </div>
     </div>
