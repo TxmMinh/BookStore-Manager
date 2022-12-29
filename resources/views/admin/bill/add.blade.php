@@ -7,7 +7,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <div>
         <h3>Nhân Viên</h3>
-        <select class="form-control" name="category_id">
+        <select class="form-control" name="staff_id">
             @foreach ($staffs as $staff)
                 <option value="{{ $staff->id }}">{{ $staff->name }}</option>
             @endforeach
