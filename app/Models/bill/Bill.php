@@ -10,8 +10,8 @@ class Bill extends Model
     use HasFactory;
 
     protected $fillable = [
-        'ID_Customer',
-        'data',
+        'customer_id',
+        'staff_id',
         'sum_money',
         'payment',
         'debt',

@@ -8,6 +8,8 @@ use App\Http\Services\bill\BillService;
 use App\Http\Services\People\ClientService;
 use App\Models\bill\Bill;
 use App\Models\people\Client;
+use App\Models\people\Staff;
+use App\Models\book\ImportBook;
 use App\Models\book\Book;
 
 
@@ -25,6 +27,8 @@ class BillController extends Controller
         return view('admin.bill.add', [
             'title' => 'Bán Sản Phẩm',
             'clients' => Client::orderBy('id')->get(),
+            'staffs' => Staff::orderBy('id')->get(),
+            'importbooks' => ImportBook::orderBy('id')->get(),
             'books' => Book::orderBy('id')->get(),
         ]);
     }

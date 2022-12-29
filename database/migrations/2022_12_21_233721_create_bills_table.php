@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
-            $table->integer('staff_id');
+            $table->integer('customer_id'); // id khách hàng
+            $table->integer('staff_id'); // id nhân viên
             $table->integer('sum_money'); // tổng tiền cần thanh toán
             $table->integer('payment'); // tiền trả
             $table->integer('debt'); // tiền nợ

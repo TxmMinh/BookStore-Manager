@@ -34,5 +34,8 @@ class Book extends Model
         return $this->hasOne(Publishing_house::class, 'id', 'publishing_house_id');
     }
 
-
+    public function importbooks()
+    {
+        return $this->belongsTo(ImportBook::class, 'book_code', 'id');
+    }
 }

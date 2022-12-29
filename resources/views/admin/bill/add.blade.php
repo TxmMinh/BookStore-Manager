@@ -5,19 +5,21 @@
 <div class="m-3">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
     <div>
-        <h3>Ngày Tạo Hóa Đơn</h3>
-        <input type="date" name="date">
+        <h3>Nhân Viên</h3>
+        <select class="form-control" name="category_id">
+            @foreach ($staffs as $staff)
+                <option value="{{ $staff->id }}">{{ $staff->name }}</option>
+            @endforeach
+        </select>
     </div>
-    <br />
+    <br/>
 
     <div>
       <h3>Thông tin khách hàng
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#chooseCustomerModal">Chọn khách hàng</button>
       </h3>
     <!-- Button trigger modal -->
-
 
     <!-- Modal -->
     <div class="modal fade" id="chooseCustomerModal" tabindex="-1" aria-labelledby="chooseCustomerModalLabel"
@@ -113,10 +115,10 @@
                   <tr>
                       <th scope="row">{{ $book->id }}</th>
                       <td>{{ $book->name }}</td>
-                      <td>{{ $book->author_id }}</td>
-                      <td>{{ $book->category_id }}</td>
-                      <td>{{ $book->publishing_house }}</td>
-                      <td>{{ $book->gia_ban }}</td>
+                      <td>{{ $book->authors->name }}</td>
+                      <td>{{ $book->categories->name }}</td>
+                      <td>{{ $book->publishing_houses->name }}</td>
+                      <td>{{ $book->unit_import }}</td>
                       <td>{{ $book->number }}</td>
                       <td id="buy-quantity"><input type="number" /></td>
                   </tr>
