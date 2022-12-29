@@ -9,7 +9,6 @@
                     <th scope="col">ID</th>
                     <th scope="col">Khách Hàng</th>
                     <th scope="col">Nhân Viên</th>
-                    <th scope="col">Ngày Nhập</th>
                     <th scope="col">Tổng Tiền</th>
                     <th scope="col">Tiền Khách Trả</th>
                     <th scope="col">Tiền Khách Nợ</th>
@@ -19,12 +18,11 @@
                 @foreach ($bills as $key => $bill)
                 <tr>
                     <td>{{ $bill->id }}</td>
-                    <td>{{ $bill->mahoadon }}</td>
-                    <td>{{ $bill->customer }}</td>
-                    <td>{{ $bill->data }}</td>
+                    <td>{{ $bill->customer_id }}</td>
+                    <td>{{ $bill->staff_id }}</td>
                     <td>{{ $bill->sum_money }}</td>
-                    <td>{{ $bill->tien_tra }}</td>
-                    <td>{{ $bill->tien_no }}</td>
+                    <td>{{ $bill->payment }}</td>
+                    <td>{{ $bill->debt }}</td>
                 </tr>
                 @endforeach
             </tbody>
