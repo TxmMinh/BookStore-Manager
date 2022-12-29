@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="card-body" class="container mt-5">
-
-        <table class="table table-bordered mb-5">
+        <table class="table table-bordered mb-5" id="search_table">
             <thead>
                 <tr class="table-success">
                     <th scope="col">ID</th>
@@ -34,4 +33,5 @@
         {{-- Pagination --}}
         {!! $import_books->links() !!}
     </div>
+
 @endsection

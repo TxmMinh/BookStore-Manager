@@ -14,7 +14,6 @@ use App\Http\Controllers\Admin\Bill\BillController;
 use App\Http\Controllers\Admin\Receipt\ReceiptController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

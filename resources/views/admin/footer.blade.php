@@ -7,4 +7,13 @@
 
 <script src="/template/admin/js/main.js"></script>
 
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#search_table').DataTable();
+    });
+</script>
+
 @yield('footer')
