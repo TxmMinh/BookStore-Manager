@@ -7,8 +7,8 @@
             <thead>
                 <tr class="table-success">
                     <th scope="col">ID</th>
-                    <th scope="col">Mã Hóa Đơn</th>
-                    <th scope="col">Tên Khách Hàng</th>
+                    <th scope="col">Khách Hàng</th>
+                    <th scope="col">Nhân Viên</th>
                     <th scope="col">Ngày Nhập</th>
                     <th scope="col">Tổng Tiền</th>
                     <th scope="col">Tiền Khách Trả</th>
