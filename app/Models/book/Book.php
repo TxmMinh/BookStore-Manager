@@ -12,6 +12,7 @@ class Book extends Model
     protected $table = 'books';
 
     protected $fillable = [
+        'id',
         'name',
         'author_id',
         'category_id',
@@ -36,6 +37,6 @@ class Book extends Model
 
     public function importbooks()
     {
-        return $this->belongsTo(ImportBook::class, 'book_code', 'id');
+        return $this->hasOne(ImportBook::class, 'book_code', 'id');
     }
 }

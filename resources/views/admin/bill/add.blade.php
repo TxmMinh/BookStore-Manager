@@ -118,7 +118,7 @@
                       <td>{{ $book->authors->name }}</td>
                       <td>{{ $book->categories->name }}</td>
                       <td>{{ $book->publishing_houses->name }}</td>
-                      <td>{{ $book->unit_import }}</td>
+                      <td>{{ $book->importbooks->unit_import }}</td>
                       <td>{{ $book->number }}</td>
                       <td id="buy-quantity"><input type="number" /></td>
                   </tr>
