@@ -1,4 +1,4 @@
-function getRow(data) {
+function getRow(data, isTotal) {
     const $tag = document.createElement(`tr`);
 
     const $id = document.createElement(`th`);
@@ -22,31 +22,58 @@ function getRow(data) {
     $tag.appendChild($quantity);
     $tag.appendChild($money);
 
+    if (isTotal) {
+        console.log(data);
+        document
+            .getElementsByName("sum_money")[0]
+            .setAttribute("value", data.money);
+        document
+            .getElementsByName("book_id_list")[0]
+            .setAttribute("value", data.sqlIdList);
+        document
+            .getElementsByName("book_quantity_list")[0]
+            .setAttribute("value", data.sqlquantityList);
+
+        const $payment = document.getElementsByName("payment")[0];
+        if ($payment.value !== "") {
+            const money = parseInt($payment.value);
+
+            document
+                .getElementsByName("debt")[0]
+                .setAttribute("value", data.money - money);
+        }
+    }
     return $tag;
 }
 
 let totalPrice = 0;
-let curBuyList = [];
 function renderReceipt(buyList) {
     const $receipt = document.getElementById(`receipt-book-list`);
     $receipt.innerHTML = ``;
 
-    curBuyList = [...buyList];
-
     totalPrice = 0;
+    const idList = [];
+    const quantityList = [];
     buyList.forEach((item) => {
         $receipt.appendChild(getRow(item));
         totalPrice += item.num * item.price;
+        idList.push(item.id);
+        quantityList.push(item.num);
     });
     $receipt.appendChild(
-        getRow({
-            id: ``,
-            name: ``,
-            author: ``,
-            price: ``,
-            num: ``,
-            money: totalPrice,
-        })
+        getRow(
+            {
+                id: ``,
+                name: ``,
+                author: ``,
+                price: ``,
+                num: ``,
+                money: totalPrice,
+                sqlIdList: idList.join("|"),
+                sqlquantityList: quantityList.join("|"),
+            },
+            true
+        )
     );
 }
 
@@ -71,19 +98,18 @@ $btnCreateReceipt.onclick = function () {
         return;
     }
 
-    if (money > totalPrice) {
-        swal(`Lỗi!`, `Số tiền thanh toán quá lớn! Mời nhập lại.`, `error`);
-        return;
-    }
     swal(
         `Thanh toán thành công!`,
         `Số tiền: ${money} VNĐ` +
-            (money < totalPrice ? `\nNợ: ${totalPrice - money} VNĐ` : ``),
+            (money < totalPrice
+                ? `\nNợ: ${totalPrice - money} VNĐ`
+                : money > totalPrice
+                ? `\nDư: ${money - totalPrice}`
+                : ``),
         `success`
     );
 
     console.log(buyList);
-    // setInterval(() => location.reload(), 1000);
 };
 
 export { renderReceipt };

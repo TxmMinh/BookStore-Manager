@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('payment'); // tiền trả
             $table->integer('debt'); // tiền nợ
             $table->string('book_id_list', 1500);
+            $table->string('book_quantity_list', 1500);
             $table->timestamps();
         });
     }
