@@ -6,8 +6,8 @@
         <div class="card-body">
 
             <div class="form-group">
-                <label for="menu">Tên Khánh Hàng</label>
-                <input type="text" name="name" class="form-control" id="menu" placeholder="Nhập Tên Khánh Hàng">
+                <label for="menu">Tên Khách Hàng</label>
+                <input type="text" name="name" class="form-control" id="menu" placeholder="Nhập Tên Khách Hàng">
             </div>
 
             <div class="form-group">
@@ -30,7 +30,7 @@
         <!-- /.card-body -->
 
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Thêm Khánh Hàng</button>
+            <button type="submit" class="btn btn-primary">Thêm Khách Hàng</button>
         </div>
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />

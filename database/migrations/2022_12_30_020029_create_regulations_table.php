@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('regulations', function (Blueprint $table) {
             $table->id();
-            $table->string('id');
             $table->text('content');
             $table->integer('active');
             $table->timestamps();
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('regulation');
+        Schema::dropIfExists('regulations');
     }
 };

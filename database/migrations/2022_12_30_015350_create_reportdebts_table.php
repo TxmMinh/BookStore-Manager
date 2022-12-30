@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('reportdebts', function (Blueprint $table) {
             $table->id();
+            $table->integer('month');
+            $table->integer('customer_id');
+            $table->integer('no_dau');
+            $table->integer('phat_sinh');
+            $table->integer('no_cuoi');
             $table->timestamps();
         });
     }

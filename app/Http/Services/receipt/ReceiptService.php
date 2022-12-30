@@ -23,7 +23,7 @@ class ReceiptService
                 Session::flash('success', 'Nhập Phiếu Thu Tiền Thành Công');
             }
             else {
-                Session::flash('err_phieuthu', 'Số tiền thu phải nhỏ hơn tiền khách nợ');
+                Session::flash('err_phieuthu', 'Số Tiền Thu Không Lớn Hơn Số Tiền Khách Nợ');
             }
 
         } catch (\Exception $error) {
