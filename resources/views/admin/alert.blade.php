@@ -22,4 +22,10 @@
     </div>
 @endif
 
+@if (Session::has('err_phieuthu'))
+    <div class="alert alert-danger">
+        {{ Session::get('err_phieuthu') }}
+    </div>
+@endif
+
 

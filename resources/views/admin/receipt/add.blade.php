@@ -7,28 +7,13 @@
         @csrf {{-- token --}}
         <div class="card-body">
             <div class="form-group">
-                <label>Tên Khách Hàng</label>
-                <input type="text" name="customer_name" class="form-control" >
-            </div>
-
-            <div class="form-group">
-                <label>Số Điện Thoại</label>
-                <input type="text" name="phone_number" class="form-control" >
-            </div>
-
-            <div class="form-group">
-                <label>Địa Chỉ</label>
-                <input type="text" name="address" class="form-control" id="menu" >
-            </div>
-
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" name="email" class="form-control" >
-            </div>
-
-            <div class="form-group">
-                <label>Ngày Nhập</label>
-                <input type="date" name="date" class="form-control" >
+                <label for="menu">Khách Hàng</label>
+                <select class="form-control" name="customer_id">
+                    <option value="0" disabled style="color: rgb(5, 5, 242)">Tên - Số Điện Thoại - Email - Địa Chỉ - Tổng Nợ</option>
+                    @foreach ($clients as $client)
+                        <option value="{{ $client->id }}">{{ $client->name }} - {{ $client->phone_number }} - {{ $client->email }} - {{ $client->address }} - {{ $client->tong_no }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">

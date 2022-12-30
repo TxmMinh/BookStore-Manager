@@ -132,6 +132,7 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('/report')->group(function () {
             Route::get('/inventory_report', [ReportInventoryController::class, 'index']);
             Route::get('/debt_report', [ReportDebtController::class, 'index']);
+            Route::get('/revenue_report', [ReportRevenueController::class, 'index']);
         });
     });
 

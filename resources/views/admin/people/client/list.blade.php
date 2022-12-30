@@ -10,6 +10,7 @@
                     <th scope="col">Tên Khách Hàng</th>
                     <th scope="col">Số Điện Thoại</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Địa Chỉ</th>
                     <th scope="col">Tổng Nợ</th>
                     <th scope="col" style="width: 100px">Cập Nhập</th>
                 </tr>
@@ -21,6 +22,7 @@
                     <td>{{ $client->name }}</td>
                     <td>{{ $client->phone_number }}</td>
                     <td>{{ $client->email }}</td>
+                    <td>{{ $client->address }}</td>
                     <td>{{ $client->tong_no }}</td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="/admin/client/edit/{{ $client->id }}">

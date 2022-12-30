@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin\Bill;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\bill\BillService;
-use App\Http\Services\People\ClientService;
 use App\Models\bill\Bill;
 use App\Models\people\Client;
 use App\Models\people\Staff;
 use App\Models\book\ImportBook;
 use App\Models\book\Book;
+use Illuminate\Support\Facades\DB;
 
 
 class BillController extends Controller

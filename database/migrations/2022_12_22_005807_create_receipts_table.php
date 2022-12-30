@@ -15,11 +15,7 @@ return new class extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_name');
-            $table->string('phone_number');
-            $table->string('address');
-            $table->string('email');
-            $table->date('date');
+            $table->string('customer_id');
             $table->integer('money');
             $table->timestamps();
         });

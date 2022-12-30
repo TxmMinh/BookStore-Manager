@@ -4,6 +4,8 @@ namespace App\Http\Services\bill;
 
 use App\Models\bill\Bill;
 use Illuminate\Support\Facades\Session;
+use App\Models\people\Staff;
+use App\Models\people\Client;
 
 class BillService
 {
@@ -17,11 +19,16 @@ class BillService
             Session::flash('error', $error->getMessage());
             return false;
         }
+
+        $debt = $request->input('debt');
+        $tong_no = Client::where('id', $request->input('customer_id'))->get()->value('tong_no');
+        $update = (int)$debt + (int)$tong_no;
+        Client::where('id', $request->input('customer_id'))->update(['tong_no' => $update]);
     }
 
     public function get()
     {
-        return Bill::orderByDesc('id')->paginate(10);
+        return Bill::with(['staffs', 'clients'])->orderByDesc('id')->paginate(10);
     }
 
 }

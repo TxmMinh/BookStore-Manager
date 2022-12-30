@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\receipt\ReceiptService;
 use App\Models\receipt\Receipt;
+use Illuminate\Support\Facades\DB;
 
 class ReceiptController extends Controller
 {
@@ -19,6 +20,7 @@ class ReceiptController extends Controller
     {
         return view('admin.receipt.add', [
             'title' => 'Phiếu Thu Tiền',
+            'clients' => DB::table('clients')->get(),
         ]);
     }
 

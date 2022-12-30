@@ -233,6 +233,12 @@
                                 <p>Báo Cáo Công Nợ</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/admin/report/revenue_report" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Báo Cáo Doanh Thu</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

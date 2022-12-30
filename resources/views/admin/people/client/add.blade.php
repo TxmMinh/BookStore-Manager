@@ -20,10 +20,10 @@
                 <input type="text" name="email" class="form-control" class="form-control">
             </div>
 
-            {{-- <div class="form-group">
-                <label>Tổng Nợ</label>
-                <input type="number" name="tong_no" class="form-control" class="form-control" value="0">
-            </div> --}}
+            <div class="form-group">
+                <label>Địa Chỉ</label>
+                <input type="text" name="address" class="form-control" class="form-control">
+            </div>
 
         </div>
 
