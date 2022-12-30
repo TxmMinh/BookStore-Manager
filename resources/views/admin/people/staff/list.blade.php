@@ -12,6 +12,7 @@
                     <th scope="col">Số Điện Thoại</th>
                     <th scope="col">Ngày Sinh</th>
                     <th scope="col">Địa Chỉ</th>
+                    <th scope="col" style="width: 100px">Cập Nhập</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,7 +24,15 @@
                     <td>{{ $staff->phone_number }}</td>
                     <td>{{ $staff->birth_of_date }}</td>
                     <td>{{ $staff->address }}</td>
-
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/admin/staff/edit/{{ $staff->id }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-sm"
+                            onclick="removeRow({{ $staff->id }}, '/admin/staff/destroy')">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

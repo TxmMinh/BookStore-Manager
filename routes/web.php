@@ -12,6 +12,10 @@ use App\Http\Controllers\Admin\People\ClientController;
 use App\Http\Controllers\Admin\Bill\BuyController;
 use App\Http\Controllers\Admin\Bill\BillController;
 use App\Http\Controllers\Admin\Receipt\ReceiptController;
+use App\Http\Controllers\Admin\RegulationController;
+use App\Http\Controllers\Admin\ReportInventoryController;
+use App\Http\Controllers\Admin\ReportDebtController;
+
 
 
 /*
@@ -113,6 +117,21 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/add', [ReceiptController::class, 'create']);
             Route::post('/add', [ReceiptController::class, 'store']);
             Route::get('/list', [ReceiptController::class, 'index']);
+        });
+
+        Route::prefix('/regulation')->group(function () {
+            // add new regulation
+            Route::get('/add', [RegulationController::class, 'create']);
+            Route::post('/add', [RegulationController::class, 'store']);
+            Route::get('/list', [RegulationController::class, 'index']);
+            Route::get('/edit/{regulation}', [RegulationController::class, 'show']);
+            Route::post('/edit/{regulation}', [RegulationController::class, 'update']);
+            Route::delete('/destroy', [RegulationController::class, 'destroy']);
+        });
+
+        Route::prefix('/report')->group(function () {
+            Route::get('/inventory_report', [ReportInventoryController::class, 'index']);
+            Route::get('/debt_report', [ReportDebtController::class, 'index']);
         });
     });
 

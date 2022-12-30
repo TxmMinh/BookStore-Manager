@@ -12,6 +12,7 @@
                     <th scope="col">Đơn Giá Nhập</th>
                     <th scope="col">Đơn Giá Bán</th>
                     <th scope="col">Ngày Nhập</th>
+                    <th scope="col">Cập Nhập</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,15 @@
                     <td>{{ $import_book->unit_import }}</td>
                     <td>{{ $import_book->price }}</td>
                     <td>{{ $import_book->created_at->format('d/m/Y') }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/admin/import_book/edit/{{ $import_book->id }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-sm"
+                            onclick="removeRow({{ $import_book->id }}, '/admin/import_book/destroy')">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
 
                 </tr>
                 @endforeach

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('regulations', function (Blueprint $table) {
-            $table->varchar('id');
+            $table->id();
             $table->text('content');
             $table->integer('active');
             $table->timestamps();

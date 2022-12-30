@@ -89,7 +89,7 @@
                         <li class="nav-item">
                             <a href="/admin/book/author/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Tác Giả</p>
+                                <p>Thêm Tác Giả</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -101,7 +101,7 @@
                         <li class="nav-item">
                             <a href="/admin/book/category/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Thể Loại</p>
+                                <p>Thêm Thể Loại</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -113,7 +113,7 @@
                         <li class="nav-item">
                             <a href="/admin/book/publishing_house/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Nhà Xuất Bản</p>
+                                <p>Thêm Nhà Xuất Bản</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -125,7 +125,7 @@
                         <li class="nav-item">
                             <a href="/admin/book/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Đầu Sách</p>
+                                <p>Thêm Đầu Sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -222,13 +222,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/note/add" class="nav-link">
+                            <a href="/admin/report/inventory_report" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Báo Cáo Tồn</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/note/list" class="nav-link">
+                            <a href="/admin/report/debt_report" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Báo Cáo Công Nợ</p>
                             </a>
@@ -247,13 +247,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/note/add" class="nav-link">
+                            <a href="/admin/regulation/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Quy Định</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/note/list" class="nav-link">
+                            <a href="/admin/regulation/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh Sách Quy Định</p>
                             </a>
