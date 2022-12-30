@@ -13,10 +13,9 @@ use App\Http\Controllers\Admin\Bill\BuyController;
 use App\Http\Controllers\Admin\Bill\BillController;
 use App\Http\Controllers\Admin\Receipt\ReceiptController;
 use App\Http\Controllers\Admin\RegulationController;
-use App\Http\Controllers\Admin\ReportInventoryController;
-use App\Http\Controllers\Admin\ReportDebtController;
-
-
+use App\Http\Controllers\Admin\Report\ReportInventoryController;
+use App\Http\Controllers\Admin\Report\ReportDebtController;
+use App\Http\Controllers\Admin\Report\ReportRevenueController;
 
 /*
 |--------------------------------------------------------------------------

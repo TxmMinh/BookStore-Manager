@@ -3,31 +3,31 @@
 @section('content')
     <div class="card-body" class="container mt-5">
 
-        <table class="table table-bordered mb-5">
+        <table class="table table-bordered mb-5" id="search_table">
             <thead>
                 <tr class="table-success">
-                    <th scope="col">ID</th>
-                    <th scope="col">Tên Sách</th>
-                    <th scope="col">Tác Giả</th>
-                    <th scope="col">Thể Loại</th>
-                    <th scope="col">Nhà Xuất Bản</th>
+                    <th scope="col">Tháng</th>
+                    <th scope="col">Tên Khách Hàng</th>
+                    <th scope="col">Nợ Đầu</th>
+                    <th scope="col">Phát Sinh</th>
+                    <th scope="col">Nợ Cuối</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($books as $key => $book)
+                @foreach ($clients as $key => $client)
                 <tr>
-                    <td>{{ $book->id }}</td>
-                    <td>{{ $book->name }}</td>
-                    <td>{{ $book->authors->name }}</td>
-                    <td>{{ $book->categories->name }}</td>
-                    <td>{{ $book->publishing_houses->name }}</td>
+                    <td>{{ date('F', strtotime($client->created_at)) }}</td>
+                    <td>{{ $client->name }}</td>
+                    <td>{{ 0 }}</td>
+                    <td>{{ $client->tong_no }}</td>
+                    <td>{{ $client->tong_no }}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
 
         {{-- Pagination --}}
-        {!! $books->links() !!}
+        {!! $clients->links() !!}
 
     </div>
 @endsection
